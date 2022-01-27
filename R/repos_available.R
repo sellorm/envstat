@@ -14,19 +14,27 @@ check_cran_mirror <- function(url){
 }
 
 
-check_repos_available <- function(config) {
-  cli::cli_h2("Checking configured repos are available")
+check_repos_available <- function(config, silent = FALSE) {
+  if (isFALSE(silent)){
+    cli::cli_h2("Checking configured repos are available")
+  }
   if ((is.null(config$repos_available)) || (isFALSE(config$repos_available))) {
-    cli::cli_alert_warning("Not enabled - skipping")
+    if (isFALSE(silent)){
+      cli::cli_alert_warning("Not enabled - skipping")
+    }
   } else {
     output <- c()
     for (repo in options("repos")) {
       repo_up <- check_cran_mirror(repo)
       if (isTRUE(repo_up)) {
-        cli::cli_alert_success(paste0("CRAN repo availabe: ", repo))
+        if (isFALSE(silent)){
+          cli::cli_alert_success(paste0("CRAN repo availabe: ", repo))
+        }
         output <- append(output, TRUE)
       } else {
-        cli::cli_alert_danger(paste0("Error contacting CRAN repo: ", repo))
+        if (isFALSE(silent)){
+          cli::cli_alert_danger(paste0("Error contacting CRAN repo: ", repo))
+        }
         output <- append(output, FALSE)
       }
     }

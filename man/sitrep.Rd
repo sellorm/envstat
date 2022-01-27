@@ -4,9 +4,11 @@
 \alias{sitrep}
 \title{Output an environment status situsation report}
 \usage{
-sitrep(path = "~/.envstat")
+sitrep(silent = FALSE, path = "~/.envstat")
 }
 \arguments{
+\item{silent}{boolean disables printed output}
+
 \item{path}{path to the envstat config file}
 }
 \value{
