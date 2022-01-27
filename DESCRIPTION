@@ -1,0 +1,17 @@
+Package: envstat
+Title: Configurable reporting on your external compute environment
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Mark",
+           family = "Sellors",
+           email = "rstats@5vcc.com",
+           role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    cli,
+    httr2,
+    yaml

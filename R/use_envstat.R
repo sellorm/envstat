@@ -1,0 +1,26 @@
+#' Create a new skeleton configuration file
+#'
+#' @export
+use_envstat <- function(){
+  if (file.exists("~/.envstat")){
+    stop("The envstat config file, `~/.envstat`, already exists!")
+  }
+
+  writeLines(c(
+    "file_exists:",
+    "  - /path/to/myfile",
+    "  - /path/to/a/different/file",
+    "dir_exists:",
+    "  - /path/to/mydir",
+    "repos_available: TRUE",
+    "RSPM:",
+    "  - https://rstudio.example.com/rspm",
+    "RSConnect:",
+    "  - https://rstudio.example.com/rsc",
+    "  - https://connect.megacorp.com",
+    "env_vars:",
+    "  - CONNECT_API_KEY",
+    "  - http_proxy"
+  ), con = "~/.envstat"
+  )
+}
