@@ -1,8 +1,8 @@
 #' Create a new skeleton configuration file
 #'
 #' @export
-use_envstat <- function(){
-  if (file.exists("~/.envstat")){
+use_envstat <- function() {
+  if (file.exists("~/.envstat")) {
     stop("The envstat config file, `~/.envstat`, already exists!")
   }
 
@@ -21,6 +21,5 @@ use_envstat <- function(){
     "env_vars:",
     "  - CONNECT_API_KEY",
     "  - http_proxy"
-  ), con = "~/.envstat"
-  )
+  ), con = "~/.envstat")
 }

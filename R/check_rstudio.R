@@ -1,4 +1,4 @@
-check_ping_endpoint <- function(url){
+check_ping_endpoint <- function(url) {
   ping_url <- paste0(url, "/__ping__")
   request <- httr2::request(ping_url)
   result <- httr2::req_perform(request)
@@ -6,34 +6,38 @@ check_ping_endpoint <- function(url){
     httr2::resp_body_json(result, check_type = FALSE),
     error = function(e) NULL
   )
-  if ((result$status_code == 200) & (is.list(result_body))){
+  if ((result$status_code == 200) & (is.list(result_body))) {
     TRUE
   } else {
     FALSE
   }
 }
 
-check_rspm <- function(config, silent = FALSE){
-  if (isFALSE(silent)){
-    cli::cli_h2("Checking RStudio Package Manager instances")
-  }
+check_rspm <- function(config, silent = FALSE) {
+  cli_silencer(
+    silent, "cli_h2",
+    "Checking RStudio Package Manager instances"
+  )
   if (is.null(config$RSPM)) {
-    if (isFALSE(silent)){
-      cli::cli_alert_warning("No RSPM instances specified - skipping")
-    }
+    cli_silencer(
+      silent, "cli_alert_warning",
+      "No RSPM instances specified - skipping"
+    )
   } else {
     output <- c()
     for (rspm_instance in config$RSPM) {
       instance_up <- check_ping_endpoint(rspm_instance)
       if (isTRUE(instance_up)) {
-        if (isFALSE(silent)){
-          cli::cli_alert_success(paste0("RSPM instance available: ", rspm_instance))
-        }
+        cli_silencer(
+          silent, "cli_alert_success",
+          paste0("RSPM instance available: ", rspm_instance)
+        )
         output <- append(output, TRUE)
       } else {
-        if (isFALSE(silent)){
-          cli::cli_alert_danger(paste0("Error contacting RSPM instance: ", rspm_instance))
-        }
+        cli_silencer(
+          silent, "cli_alert_danger",
+          paste0("Error contacting RSPM instance: ", rspm_instance)
+        )
         output <- append(output, FALSE)
       }
     }
@@ -41,27 +45,34 @@ check_rspm <- function(config, silent = FALSE){
   }
 }
 
-check_rsc <- function(config, silent = FALSE){
-  if (isFALSE(silent)){
-    cli::cli_h2("Checking RStudio Connect instances")
-  }
+check_rsc <- function(config, silent = FALSE) {
+  cli_silencer(
+    silent, "cli_h2",
+    "Checking RStudio Connect instances"
+  )
   if (is.null(config$RSConnect)) {
-    if (isFALSE(silent)){
-      cli::cli_alert_warning("No RStudio Connect instances specified - skipping")
-    }
+    cli_silencer(
+      silent, "cli_alert_warning",
+      "No RStudio Connect instances specified - skipping"
+    )
   } else {
     output <- c()
     for (rsc_instance in config$RSConnect) {
       instance_up <- check_ping_endpoint(rsc_instance)
       if (isTRUE(instance_up)) {
-        if (isFALSE(silent)){
-          cli::cli_alert_success(paste0("RSConnect instance available: ", rsc_instance))
-        }
+        cli_silencer(
+          silent, "cli_alert_success",
+          paste0("RSConnect instance available: ", rsc_instance)
+        )
         output <- append(output, TRUE)
       } else {
-        if (isFALSE(silent)){
-          cli::cli_alert_danger(paste0("Error contacting RSConnect instance: ", rsc_instance))
-        }
+        cli_silencer(
+          silent, "cli_alert_danger",
+          paste0(
+            "Error contacting RSConnect instance: ",
+            rsc_instance
+          )
+        )
         output <- append(output, FALSE)
       }
     }

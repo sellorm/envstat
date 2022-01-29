@@ -12,7 +12,7 @@ sitrep(silent = FALSE, path = "~/.envstat")
 \item{path}{path to the envstat config file}
 }
 \value{
-returns TRUE or FALSE invisibly, depending on whether all checks pass or fail
+TRUE/FALSE invisibly, to indicate all checks pass/fail
 }
 \description{
 Output an environment status situsation report
