@@ -1,10 +1,13 @@
 check_ping_endpoint <- function(url) {
   ping_url <- paste0(url, "/__ping__")
   request <- httr2::request(ping_url)
-  result <- httr2::req_perform(request)
+  result <- tryCatch(
+    httr2::req_perform(request),
+    error = function(e) {list(message = "Request failure", status_code = 0)}
+    )
   result_body <- tryCatch(
     httr2::resp_body_json(result, check_type = FALSE),
-    error = function(e) NULL
+    error = function(e) {list(message = "Problem with result", status_code = 0)}
   )
   if ((result$status_code == 200) & (is.list(result_body))) {
     TRUE

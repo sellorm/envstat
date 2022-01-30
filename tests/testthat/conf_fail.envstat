@@ -1,0 +1,12 @@
+file_exists:
+  - /tmp/delete_me/banana
+dir_exists:
+  - ../testthat/hats
+repos_available: true
+RSPM:
+  - https://rstudio.example.com/rspm
+RSConnect:
+  - https://rstudio.example.com/rsc
+  - https://connect.example.com
+env_vars:
+  - FAKE_ENV_VAR
