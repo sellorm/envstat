@@ -1,7 +1,7 @@
 file_exists:
-  - ~/tmp/delete_me
+  - /tmp/delete_me
 dir_exists:
-  - ~/tmp
+  - /tmp
 repos_available: false
 RSPM:
   - https://colorado.rstudio.com/rspm
