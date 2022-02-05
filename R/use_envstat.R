@@ -1,12 +1,12 @@
 #' Create a new skeleton configuration file
 #'
-#' @param path path to the config file
+#' @param filepath path to the config file
 #' @param source customise the source of the example config file
 #' @return TRUE/FALSE invisibly to indicate success/failure
 #' @export
-use_envstat <- function(path = "~/.envstat", source = NULL) {
-  if (file.exists(path)) {
-    stop("The envstat config file, `~/.envstat`, already exists!")
+use_envstat <- function(filepath = "~/.envstat", source = NULL) {
+  if (file.exists(filepath)) {
+    stop("The file, '", filepath, "', already exists!")
   }
 
   if (is.null(source)) {
@@ -22,7 +22,7 @@ use_envstat <- function(path = "~/.envstat", source = NULL) {
   invisible(
     file.copy(
       from = conf_source,
-      to = path
+      to = filepath
     )
   )
 }
