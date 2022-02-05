@@ -124,7 +124,8 @@ Takes a list of file paths.
 
 Tests whether the specified file exists. This can be useful for checking
 that you have access to a specific filesystem (for example a Windows
-share) by checking for a specific file on it.
+share) by checking for a specific file on it. Alternatively, you could
+use it to check for a spefic config file that you use regularly.
 
 ### dir_exists
 
@@ -158,5 +159,5 @@ Checks to see if we can connect to the specified Connect instances.
 List of environment variables to check.
 
 Use this section to list any environment variables that you need to have
-set. When run, `envstat:::sitrep()` will check if the environment
+set. When run, `envstat::sitrep()` will check if the environment
 variables are set and let you know if they’re not.
