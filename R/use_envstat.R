@@ -10,7 +10,7 @@ use_envstat <- function(path = "~/.envstat", source = NULL) {
   }
 
   if (is.null(source)) {
-    conf_source = paste0(path.package("envstat"), "/example.envstat")
+    conf_source = file.path(find.package("envstat"), "example.envstat")
   } else {
     conf_source = source
   }
