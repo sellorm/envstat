@@ -4,10 +4,10 @@
 \alias{use_envstat}
 \title{Create a new skeleton configuration file}
 \usage{
-use_envstat(path = "~/.envstat", source = NULL)
+use_envstat(filepath = "~/.envstat", source = NULL)
 }
 \arguments{
-\item{path}{path to the config file}
+\item{filepath}{path to the config file}
 
 \item{source}{customise the source of the example config file}
 }
