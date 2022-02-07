@@ -98,6 +98,9 @@ You can create a example config file in the correct location with
 Naturally, this example config file will result in errors if you run
 `sitrep()` with it as-is, but it's a good example of what's possible.
 
+In the RStudio IDE, you can edit your envstat config file with 
+`envstat::edit_envstat()`.
+
 Feel free to omit any sections you don't need.
 
 ```
