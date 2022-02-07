@@ -7,7 +7,7 @@ Authors@R:
            email = "rstats@5vcc.com",
            role = c("aut", "cre"))
 Description: Runs a series of configurable tests against a user's compute 
-  environment. This can be used for checking that things, like a specific 
+  environment. This can be used for checking that things like a specific 
   directory or an environment variable is available before you start an analysis.
   Alternatively, you can use the package's situation report when filing error
   reports with your compute infrastructure.
