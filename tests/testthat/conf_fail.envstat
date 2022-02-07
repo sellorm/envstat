@@ -2,7 +2,7 @@ file_exists:
   - /tmp/delete_me/banana
 dir_exists:
   - ../testthat/hats
-repos_available: true
+repos_available: false
 RSPM:
   - https://rstudio.example.com/rspm
 RSConnect:
