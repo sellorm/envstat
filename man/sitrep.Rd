@@ -2,7 +2,7 @@
 % Please edit documentation in R/sitrep.R
 \name{sitrep}
 \alias{sitrep}
-\title{Output an environment status situsation report}
+\title{Output an environment status situation report}
 \usage{
 sitrep(silent = FALSE, path = "~/.envstat")
 }
@@ -15,5 +15,8 @@ sitrep(silent = FALSE, path = "~/.envstat")
 TRUE/FALSE invisibly, to indicate all checks pass/fail
 }
 \description{
-Output an environment status situsation report
+Reports on the availability of certain features of your compute
+infrastructure, for example, environment variables, or a specific RStudio
+Package Manager instance. Configure the tests with the \code{use_envstat} and
+\code{edit_envstat} functions.
 }

@@ -1,4 +1,10 @@
-#' Output an environment status situsation report
+#' Output an environment status situation report
+#'
+#' Reports on the availability of certain features of your compute
+#' infrastructure, for example, environment variables, or a specific RStudio
+#' Package Manager instance. Configure the tests with the `use_envstat` and
+#' `edit_envstat` functions.
+#'
 #' @param silent boolean disables printed output
 #' @param path path to the envstat config file
 #' @return TRUE/FALSE invisibly, to indicate all checks pass/fail
