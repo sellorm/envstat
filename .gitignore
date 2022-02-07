@@ -1,1 +1,4 @@
 .Rproj.user
+.Rhistory
+*.html
+inst/doc
