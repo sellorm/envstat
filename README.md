@@ -24,7 +24,7 @@ Using a simple YAML configuration file,
 * Environment variables
 * RStudio Package Manager Instances
 * RStudio Connect Instances
-* CRAN repo availablity
+* CRAN repo availability
 
 ## Uses
 
@@ -129,7 +129,7 @@ Takes a list of file paths.
 Tests whether the specified file exists. This can be useful for
 checking that you have access to a specific filesystem (for example
 a Windows share) by checking for a specific file on it. Alternatively, you could
-use it to check for a spefic config file that you use regularly.
+use it to check for a specific config file that you use regularly.
 
 ### dir_exists
 
