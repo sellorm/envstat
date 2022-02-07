@@ -6,7 +6,11 @@ Authors@R:
            family = "Sellors",
            email = "rstats@5vcc.com",
            role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: Runs a series of configurable tests against a user's compute 
+  environment. This can be used for checking that things, like a specific 
+  directory or an environment variable is availble before you start an analysis.
+  Alternatively, you can use the package's situation report when filing error
+  reports with your compute infrastructure.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -14,7 +18,9 @@ RoxygenNote: 7.1.2
 Imports: 
     cli,
     httr2,
+    rstudioapi,
     yaml
 Suggests: 
+    covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

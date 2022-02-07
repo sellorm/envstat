@@ -26,3 +26,26 @@ use_envstat <- function(filepath = "~/.envstat", source = NULL) {
     )
   )
 }
+
+
+#' Edit an envstat configuration file in RStudio
+#'
+#' @param filepath path to the config file
+#' @return the path to the config file invisibly
+#' @export
+edit_envstat <- function(filepath = "~/.envstat"){
+  if (!rstudioapi::isAvailable()){
+    stop("RStudio is not available.\n",
+         "Either retry within the RStudio IDE, or use an alternative editor.")
+  }
+  if (!interactive()){
+    stop("The current session is not interactive.\n",
+         "You can only use this function from an interactive R session.")
+  }
+  if (!file.exists(filepath)){
+    stop("Can't find file: ", filepath, "\n",
+         "Please check the supplied path and try again.")
+  }
+  rstudioapi::navigateToFile(filepath)
+  invisible(filepath)
+}
