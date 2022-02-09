@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">envstat</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9000</span>
       </span>
     </div>
 
@@ -28,7 +28,13 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/sellorm/envstat/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -38,7 +44,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create a new skeleton configuration file</h1>
-    
+    <small class="dont-index">Source: <a href="https://github.com/sellorm/envstat/blob/HEAD/R/use_envstat.R" class="external-link"><code>R/use_envstat.R</code></a></small>
     <div class="hidden name"><code>use_envstat.Rd</code></div>
     </div>
 
@@ -62,6 +68,24 @@
     <p>TRUE/FALSE invisibly to indicate success/failure</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
+<span class="r-in"><span class="co"># By default envstat uses a config file in your home directory</span></span>
+<span class="r-in"><span class="fu">envstat</span><span class="fu">::</span><span class="fu">use_envstat</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># But you can tell it to use a different config file if you prefer</span></span>
+<span class="r-in"><span class="fu">envstat</span><span class="fu">::</span><span class="fu">use_envstat</span><span class="op">(</span>filepath <span class="op">=</span> <span class="st">"/tmp/config.yml"</span><span class="op">)</span></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># During normal operation use_envstat uses a default config file that ships</span></span>
+<span class="r-in"><span class="co"># with the package, but you can specify your own if you have one. This can</span></span>
+<span class="r-in"><span class="co"># be useful in settings such as multi-user server deployments of R, as many</span></span>
+<span class="r-in"><span class="co"># users could use the same base configuration file and personalise it for</span></span>
+<span class="r-in"><span class="co"># their own specific use case.</span></span>
+<span class="r-in"><span class="fu">envstat</span><span class="fu">::</span><span class="fu">use_envstat</span><span class="op">(</span>source <span class="op">=</span> <span class="st">"/shared/corp_envstat_conf.yml"</span><span class="op">)</span></span>
+<span class="r-in"><span class="op">}</span></span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

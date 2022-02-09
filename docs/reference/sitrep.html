@@ -20,7 +20,7 @@ edit_envstat functions."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">envstat</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9000</span>
       </span>
     </div>
 
@@ -31,7 +31,13 @@ edit_envstat functions."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/sellorm/envstat/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -41,7 +47,7 @@ edit_envstat functions."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Output an environment status situation report</h1>
-    
+    <small class="dont-index">Source: <a href="https://github.com/sellorm/envstat/blob/HEAD/R/sitrep.R" class="external-link"><code>R/sitrep.R</code></a></small>
     <div class="hidden name"><code>sitrep.Rd</code></div>
     </div>
 
@@ -68,6 +74,20 @@ Package Manager instance. Configure the tests with the <code>use_envstat</code> 
     <p>TRUE/FALSE invisibly, to indicate all checks pass/fail</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
+<span class="r-in"><span class="co"># By default envstat uses a config file in your home directory</span></span>
+<span class="r-in"><span class="fu">envstat</span><span class="fu">::</span><span class="fu">sitrep</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># But you can tell it to use a different config file if you prefer</span></span>
+<span class="r-in"><span class="fu">envstat</span><span class="fu">::</span><span class="fu">sitrep</span><span class="op">(</span>path <span class="op">=</span> <span class="st">"/tmp/config.yml"</span><span class="op">)</span></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># sitrep can also run silently, so that it can be used programatically</span></span>
+<span class="r-in"><span class="fu">envstat</span><span class="fu">::</span><span class="fu">sitrep</span><span class="op">(</span>silent <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span class="op">}</span></span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

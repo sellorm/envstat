@@ -42,6 +42,12 @@ tells you what you need to know.
 
 ## Installation
 
+Install from CRAN with:
+
+``` r
+install.packages("envstat")
+```
+
 You can install the development version of envstat like so:
 
 ``` r
