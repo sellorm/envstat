@@ -9,6 +9,17 @@
 #' @param path path to the envstat config file
 #' @return TRUE/FALSE invisibly, to indicate all checks pass/fail
 #' @export
+#' @examples
+#' \dontrun{
+#' # By default envstat uses a config file in your home directory
+#' envstat::sitrep()
+#'
+#' # But you can tell it to use a different config file if you prefer
+#' envstat::sitrep(path = "/tmp/config.yml")
+#'
+#' # sitrep can also run silently, so that it can be used programatically
+#' envstat::sitrep(silent = TRUE)
+#' }
 sitrep <- function(silent = FALSE, path = "~/.envstat") {
   cli_silencer(
     silent, "cli_h1",

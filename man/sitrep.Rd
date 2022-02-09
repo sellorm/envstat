@@ -20,3 +20,15 @@ infrastructure, for example, environment variables, or a specific RStudio
 Package Manager instance. Configure the tests with the \code{use_envstat} and
 \code{edit_envstat} functions.
 }
+\examples{
+\dontrun{
+# By default envstat uses a config file in your home directory
+envstat::sitrep()
+
+# But you can tell it to use a different config file if you prefer
+envstat::sitrep(path = "/tmp/config.yml")
+
+# sitrep can also run silently, so that it can be used programatically
+envstat::sitrep(silent = TRUE)
+}
+}

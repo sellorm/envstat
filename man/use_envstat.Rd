@@ -17,3 +17,19 @@ TRUE/FALSE invisibly to indicate success/failure
 \description{
 Create a new skeleton configuration file
 }
+\examples{
+\dontrun{
+# By default envstat uses a config file in your home directory
+envstat::use_envstat()
+
+# But you can tell it to use a different config file if you prefer
+envstat::use_envstat(filepath = "/tmp/config.yml")
+
+# During normal operation use_envstat uses a default config file that ships
+# with the package, but you can specify your own if you have one. This can
+# be useful in settings such as multi-user server deployments of R, as many
+# users could use the same base configuration file and personalise it for
+# their own specific use case.
+envstat::use_envstat(source = "/shared/corp_envstat_conf.yml")
+}
+}

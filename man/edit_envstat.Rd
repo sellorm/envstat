@@ -2,7 +2,7 @@
 % Please edit documentation in R/use_envstat.R
 \name{edit_envstat}
 \alias{edit_envstat}
-\title{Edit an envstat configuration file in RStudio}
+\title{Edit an envstat configuration file}
 \usage{
 edit_envstat(filepath = "~/.envstat")
 }
@@ -13,5 +13,16 @@ edit_envstat(filepath = "~/.envstat")
 the path to the config file invisibly
 }
 \description{
-Edit an envstat configuration file in RStudio
+Opens an \code{envstat} config file in your in your editor.
+Supports either the RStudio IDE, or the R default editor from
+\code{getOption("editor")}
+}
+\examples{
+\dontrun{
+# By default envstat uses a config file in your home directory
+envstat::edit_envstat()
+
+# But you can tell it to use a different config file if you prefer
+envstat::edit_envstat(filepath = "/tmp/config.yml")
+}
 }
