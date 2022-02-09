@@ -11,6 +11,8 @@ Description: Runs a series of configurable tests against a user's compute
   directory or an environment variable is available before you start an analysis.
   Alternatively, you can use the package's situation report when filing error
   reports with your compute infrastructure.
+URL: https://envstat.sellorm.com
+BugReports: https://github.com/sellorm/envstat/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
