@@ -1,2 +1,2 @@
 env_vars:
-  - R_SESSION_TMPDIR
+  - TEST_ENV_VAR
