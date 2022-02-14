@@ -1,10 +1,10 @@
-## Resubmission notes
+## Version bump to 0.0.2
 
-After initial review, the CRAN team requested that I add examples. 
-In addition to the examples, I've also added a project URL and BugReports to the
-DESCRIPTION file.
+This version addresses the CRAN policy violation that resulted in the archival 
+of the package. I'd deeply sorry for the poorly written tests in the previous
+version of the package.
 
-## Original submission test environments
+## Submission test environments
 
 * local R installation, MacOS 12.1, R 4.1.2
 * Fedora Linux, R-devel, clang, gfortran (R-hub)
@@ -12,8 +12,8 @@ DESCRIPTION file.
 * Windows Server 2022, R-devel, 64 bit (R-hub)
 
 
-## Original R CMD check results
+## R CMD check results
 
 0 errors | 0 warnings | 0 note
 
-* This is a new release.
+* This is a new version of an existing package.
