@@ -1,10 +1,18 @@
 test_that("check use_envstat works", {
-  temp_file <- tempfile(tmpdir = "/tmp")
+  # write the config to a temporary file
+  temp_file <- tempfile()
   testthat::expect_true(
-    envstat::use_envstat(filepath = temp_file, NULL))
-                         # source = "../../inst/example.envstat"))
+    envstat::use_envstat(filepath = temp_file,
+                         source = "./test-conf.envstat",
+                         consent = TRUE))
+
+  # Read our new config file
   config <- envstat:::read_config(temp_file)
+
+  # Check that the type is correct
   testthat::expect_type(config, "list")
+
+  # Clean up after ourselves
   file.remove(temp_file)
 })
 

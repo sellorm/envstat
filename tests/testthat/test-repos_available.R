@@ -1,9 +1,7 @@
 test_that("check repo checking works", {
-  config <- envstat:::read_config("conf_pass.envstat")
-  testthat::expect_true(envstat:::check_repos_available(config, silent = TRUE))
-})
+  # Tell envstat to not check if repos are available
+  config <- list(repos_available = FALSE)
 
-test_that("check repo checking fails", {
-  config <- envstat:::read_config("conf_fail.envstat")
+  # Run the tests
   testthat::expect_true(envstat:::check_repos_available(config, silent = TRUE))
 })

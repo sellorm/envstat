@@ -2,6 +2,7 @@
 #'
 #' @param filepath path to the config file
 #' @param source customise the source of the example config file
+#' @param consent boolean indicates user consent, default FALSE
 #' @return TRUE/FALSE invisibly to indicate success/failure
 #' @export
 #' @examples
@@ -19,21 +20,27 @@
 #' # their own specific use case.
 #' envstat::use_envstat(source = "/shared/corp_envstat_conf.yml")
 #' }
-use_envstat <- function(filepath = "~/.envstat", source = NULL) {
+use_envstat <- function(filepath = "~/.envstat", source = NULL, consent = FALSE) {
   if (file.exists(filepath)) {
     stop("The file, '", filepath, "', already exists!")
   }
 
   if (is.null(source)) {
-    conf_source = file.path(find.package("envstat"), "example.envstat")
+    conf_source <- file.path(find.package("envstat"), "example.envstat")
   } else {
-    conf_source = source
+    conf_source <- source
   }
 
   if (!file.exists(conf_source)) {
     stop(paste0("The source config file does not exist: ", conf_source))
   }
 
+  # Do we have user consent?
+  if (!isTRUE(user_consent(provided = consent, path = filepath))){
+    stop("This function requires user consent. Please try again.")
+  }
+
+  # Copy the file to the new location
   invisible(
     file.copy(
       from = conf_source,

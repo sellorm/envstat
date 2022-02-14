@@ -4,12 +4,14 @@
 \alias{use_envstat}
 \title{Create a new skeleton configuration file}
 \usage{
-use_envstat(filepath = "~/.envstat", source = NULL)
+use_envstat(filepath = "~/.envstat", source = NULL, consent = FALSE)
 }
 \arguments{
 \item{filepath}{path to the config file}
 
 \item{source}{customise the source of the example config file}
+
+\item{consent}{boolean indicates user consent, default FALSE}
 }
 \value{
 TRUE/FALSE invisibly to indicate success/failure

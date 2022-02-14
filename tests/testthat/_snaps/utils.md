@@ -1,4 +1,4 @@
-# cli silencer
+# cli silencer matches snapshot
 
     Code
       envstat:::cli_silencer(FALSE, "cli_h1", "hello")
