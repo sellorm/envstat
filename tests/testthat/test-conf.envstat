@@ -1,2 +1,2 @@
 env_vars:
-  - CONNECT_API_KEY
+  - R_SESSION_TMPDIR
