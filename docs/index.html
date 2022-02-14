@@ -75,8 +75,14 @@
 <!-- badges: start -->
 
 <p>Checks your compute <strong>environment status</strong>.</p>
-<p>If you need to know about your R session, you use <code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code>. But what if you need information on your external environment? Things like whether files or directories that you expect exist, or that specific environment variables are set. The <code>envstat</code> package provides a way to report on your external compute environment, or environment status, outside of R.</p>
-<p>Using a simple YAML configuration file, <code>envstat</code> can report on the availability of the following:</p>
+<p>If you need to know about your R session, you use
+<code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code>. But what if you need information on your
+external environment? Things like whether files or directories that you
+expect exist, or that specific environment variables are set. The
+<code>envstat</code> package provides a way to report on your external
+compute environment, or environment status, outside of R.</p>
+<p>Using a simple YAML configuration file, <code>envstat</code> can
+report on the availability of the following:</p>
 <ul>
 <li>Files</li>
 <li>Directories</li>
@@ -88,9 +94,15 @@
 <div class="section level2">
 <h2 id="uses">Uses<a class="anchor" aria-label="anchor" href="#uses"></a>
 </h2>
-<p>In today’s multi-location working environments, users need to know that the things they require to get their work done are available.</p>
-<p>Imagine if you often work from home as well as the office and need a VPN to in order to use RStudio Connect and Package Manager. The <code>envstat</code> package can tell you whether you have access to the things you need to be productive.</p>
-<p>Maybe it’s a shared directory, or an environment variable. <code>envstat</code> can help by providing a simple, single-function report that tells you what you need to know.</p>
+<p>In today’s multi-location working environments, users need to know
+that the things they require to get their work done are available.</p>
+<p>Imagine if you often work from home as well as the office and need a
+VPN to in order to use RStudio Connect and Package Manager. The
+<code>envstat</code> package can tell you whether you have access to the
+things you need to be productive.</p>
+<p>Maybe it’s a shared directory, or an environment variable.
+<code>envstat</code> can help by providing a simple, single-function
+report that tells you what you need to know.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -105,7 +117,8 @@
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>Once installed you can use <code><a href="reference/sitrep.html">envstat::sitrep()</a></code> to produce a pretty situation report:</p>
+<p>Once installed you can use <code><a href="reference/sitrep.html">envstat::sitrep()</a></code> to produce
+a pretty situation report:</p>
 <pre><code>── envstat situation report ───────────────────────────────────────────
 
 ── Checking files ──
@@ -140,10 +153,16 @@
 <div class="section level2">
 <h2 id="config-file-format">config file format<a class="anchor" aria-label="anchor" href="#config-file-format"></a>
 </h2>
-<p>The config file needs to live in the root of your home directory and should be called <code>.envstat</code>.</p>
-<p>Here is an example that covers all of the currently supported options;</p>
-<p>You can create a example config file in the correct location with <code><a href="reference/use_envstat.html">envstat::use_envstat()</a></code>. Naturally, this example config file will result in errors if you run <code><a href="reference/sitrep.html">sitrep()</a></code> with it as-is, but it’s a good example of what’s possible.</p>
-<p>In the RStudio IDE, you can edit your envstat config file with <code><a href="reference/edit_envstat.html">envstat::edit_envstat()</a></code>.</p>
+<p>The config file needs to live in the root of your home directory and
+should be called <code>.envstat</code>.</p>
+<p>Here is an example that covers all of the currently supported
+options;</p>
+<p>You can create a example config file in the correct location with
+<code><a href="reference/use_envstat.html">envstat::use_envstat()</a></code>. Naturally, this example config file
+will result in errors if you run <code><a href="reference/sitrep.html">sitrep()</a></code> with it as-is,
+but it’s a good example of what’s possible.</p>
+<p>In the RStudio IDE, you can edit your envstat config file with
+<code><a href="reference/edit_envstat.html">envstat::edit_envstat()</a></code>.</p>
 <p>Feel free to omit any sections you don’t need.</p>
 <pre><code>file_exists:
   - /path/to/myfile
@@ -167,7 +186,11 @@ env_vars:
 <h3 id="file_exists">file_exists<a class="anchor" aria-label="anchor" href="#file_exists"></a>
 </h3>
 <p>Takes a list of file paths.</p>
-<p>Tests whether the specified file exists. This can be useful for checking that you have access to a specific filesystem (for example a Windows share) by checking for a specific file on it. Alternatively, you could use it to check for a specific config file that you use regularly.</p>
+<p>Tests whether the specified file exists. This can be useful for
+checking that you have access to a specific filesystem (for example a
+Windows share) by checking for a specific file on it. Alternatively, you
+could use it to check for a specific config file that you use
+regularly.</p>
 </div>
 <div class="section level3">
 <h3 id="dir_exists">dir_exists<a class="anchor" aria-label="anchor" href="#dir_exists"></a>
@@ -179,25 +202,32 @@ env_vars:
 <h3 id="repos_available">repos_available<a class="anchor" aria-label="anchor" href="#repos_available"></a>
 </h3>
 <p>Boolean (true/false)</p>
-<p>If this option is set to <code>true</code>, envstat will loop through all of the repositories you have configured in <code>options("repos")</code> and check if they’re available.</p>
+<p>If this option is set to <code>true</code>, envstat will loop through
+all of the repositories you have configured in
+<code>options("repos")</code> and check if they’re available.</p>
 </div>
 <div class="section level3">
 <h3 id="rspm">RSPM<a class="anchor" aria-label="anchor" href="#rspm"></a>
 </h3>
-<p>List of RStudio Package Manager URLs. Use the base URL of the Package Manager instance</p>
+<p>List of RStudio Package Manager URLs. Use the base URL of the Package
+Manager instance</p>
 <p>Checks to see if we can connect to the specified RSPM instances.</p>
 </div>
 <div class="section level3">
 <h3 id="rsconnect">RSConnect<a class="anchor" aria-label="anchor" href="#rsconnect"></a>
 </h3>
-<p>List of RStudio Connect URLs. Use the base URL of the Connect instance.</p>
-<p>Checks to see if we can connect to the specified Connect instances.</p>
+<p>List of RStudio Connect URLs. Use the base URL of the Connect
+instance.</p>
+<p>Checks to see if we can connect to the specified Connect
+instances.</p>
 </div>
 <div class="section level3">
 <h3 id="env_vars">env_vars<a class="anchor" aria-label="anchor" href="#env_vars"></a>
 </h3>
 <p>List of environment variables to check.</p>
-<p>Use this section to list any environment variables that you need to have set. When run, <code><a href="reference/sitrep.html">envstat::sitrep()</a></code> will check if the environment variables are set and let you know if they’re not.</p>
+<p>Use this section to list any environment variables that you need to
+have set. When run, <code><a href="reference/sitrep.html">envstat::sitrep()</a></code> will check if the
+environment variables are set and let you know if they’re not.</p>
 </div>
 </div>
 </div>
@@ -256,7 +286,8 @@ env_vars:
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.2.</p>
 </div>
 
       </footer>
