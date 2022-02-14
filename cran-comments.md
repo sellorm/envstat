@@ -16,4 +16,11 @@ version of the package.
 
 0 errors | 0 warnings | 0 note
 
-* This is a new version of an existing package.
+All R-Hub builds produce the following NOTE:
+
+Package was archived on CRAN
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2022-02-10 for policy violation.
+
+
+  Uses and leaves behind /tmp/delete_me
