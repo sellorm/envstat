@@ -1,5 +1,5 @@
 check_cran_mirror <- function(url) {
-  version_url <- paste0(url, "/src/base/VERSION-INFO.dcf")
+  version_url <- paste0(url, "/src/contrib/PACKAGES.gz")
 
   request <- httr2::request(version_url)
 
@@ -15,17 +15,16 @@ check_cran_mirror <- function(url) {
     error = function(e) NULL
   )
 
-  if (result$status_code == 200) {
-    status <- TRUE
-  } else {
+  if (is.null(result)) {
     status <- FALSE
-  }
-
-  if (isFALSE(status)) {
-    if (httr2::resp_headers(result)$`x-repository-type` == "RSPM") {
+  } else {
+    if (result$status_code == 200) {
       status <- TRUE
+    } else {
+      status <- FALSE
     }
   }
+
   status
 }
 
