@@ -32,7 +32,7 @@ check_cran_mirror <- function(url) {
 check_repos_available <- function(config, silent = FALSE) {
   cli_silencer(
     silent, "cli_h2",
-    "Checking configured repos are available"
+    "Checking configured package repos are available"
   )
   output <- c()
   if ((is.null(config$repos_available)) || (isFALSE(config$repos_available))) {
@@ -54,13 +54,13 @@ check_repos_available <- function(config, silent = FALSE) {
         if (isTRUE(repo_up)) {
           cli_silencer(
             silent, "cli_alert_success",
-            paste0("CRAN repo available: ", repo)
+            paste0("Package repo available: ", repo)
           )
           output <- append(output, TRUE)
         } else {
           cli_silencer(
             silent, "cli_alert_danger",
-            paste0("Error contacting CRAN repo: ", repo)
+            paste0("Error contacting package repo: ", repo)
           )
           output <- append(output, FALSE)
         }
