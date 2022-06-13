@@ -4,7 +4,10 @@ check_cran_mirror <- function(url) {
   request <- httr2::request(version_url)
 
   result <- tryCatch(
-    httr2::req_perform(request),
+    httr2::req_perform(httr2::req_error(
+      request,
+      is_error = function(resp) FALSE
+    )),
     error = function(e) NULL
   )
   result_body <- tryCatch(
@@ -13,10 +16,17 @@ check_cran_mirror <- function(url) {
   )
 
   if (result$status_code == 200) {
-    TRUE
+    status <- TRUE
   } else {
-    FALSE
+    status <- FALSE
   }
+
+  if (isFALSE(status)) {
+    if (httr2::resp_headers(result)$`x-repository-type` == "RSPM") {
+      status <- TRUE
+    }
+  }
+  status
 }
 
 
@@ -33,7 +43,7 @@ check_repos_available <- function(config, silent = FALSE) {
     )
     output <- append(output, TRUE)
   } else {
-    for (repo in options("repos")) {
+    for (repo in options("repos")$repos) {
       if (repo == "@CRAN@") {
         cli_silencer(
           silent, "cli_alert_danger",
@@ -45,7 +55,7 @@ check_repos_available <- function(config, silent = FALSE) {
         if (isTRUE(repo_up)) {
           cli_silencer(
             silent, "cli_alert_success",
-            paste0("CRAN repo availabe: ", repo)
+            paste0("CRAN repo available: ", repo)
           )
           output <- append(output, TRUE)
         } else {
