@@ -14,7 +14,7 @@ test_that("User consent is properly handled", {
   testthat::expect_true(envstat:::user_consent(provided = TRUE))
 
   # User consent override via environment variable
-  Sys.setenv("ENVSTAT"="OVERRIDE")
+  Sys.setenv("ENVSTAT" = "OVERRIDE")
   testthat::expect_true(envstat:::user_consent())
   Sys.unsetenv("ENVSTAT")
 

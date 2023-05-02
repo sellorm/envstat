@@ -2,9 +2,12 @@ test_that("check use_envstat works", {
   # write the config to a temporary file
   temp_file <- tempfile()
   testthat::expect_true(
-    envstat::use_envstat(filepath = temp_file,
-                         source = "./test-conf.envstat",
-                         consent = TRUE))
+    envstat::use_envstat(
+      filepath = temp_file,
+      source = "./test-conf.envstat",
+      consent = TRUE
+    )
+  )
 
   # Read our new config file
   config <- envstat:::read_config(temp_file)
@@ -15,4 +18,3 @@ test_that("check use_envstat works", {
   # Clean up after ourselves
   file.remove(temp_file)
 })
-

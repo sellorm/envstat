@@ -26,14 +26,14 @@ sitrep <- function(silent = FALSE, path = "~/.envstat") {
     "envstat situation report"
   )
 
-  envstatconf     <- read_config(path = path)
+  envstatconf <- read_config(path = path)
 
-  output_files    <- check_files(envstatconf, silent = silent)
-  output_dirs     <- check_dirs(envstatconf, silent = silent)
+  output_files <- check_files(envstatconf, silent = silent)
+  output_dirs <- check_dirs(envstatconf, silent = silent)
   output_env_vars <- check_env_vars(envstatconf, silent = silent)
-  output_rspm     <- check_rspm(envstatconf, silent = silent)
-  output_rsc      <- check_rsc(envstatconf, silent = silent)
-  output_repos    <- check_repos_available(envstatconf, silent = silent)
+  output_rspm <- check_rspm(envstatconf, silent = silent)
+  output_rsc <- check_rsc(envstatconf, silent = silent)
+  output_repos <- check_repos_available(envstatconf, silent = silent)
 
   all_outputs <- c(
     output_files,

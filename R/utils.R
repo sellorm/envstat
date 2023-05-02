@@ -19,7 +19,7 @@ user_consent <- function(provided = FALSE, path = "~/.envstat") {
     return(TRUE)
   }
 
-    # If the user has specified their own path we can assume they consent
+  # If the user has specified their own path we can assume they consent
   if (!path == "~/.envstat") {
     return(TRUE)
   }

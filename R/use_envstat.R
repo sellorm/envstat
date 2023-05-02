@@ -36,7 +36,7 @@ use_envstat <- function(filepath = "~/.envstat", source = NULL, consent = FALSE)
   }
 
   # Do we have user consent?
-  if (!isTRUE(user_consent(provided = consent, path = filepath))){
+  if (!isTRUE(user_consent(provided = consent, path = filepath))) {
     stop("This function requires user consent. Please try again.")
   }
 
@@ -67,18 +67,22 @@ use_envstat <- function(filepath = "~/.envstat", source = NULL, consent = FALSE)
 #' # But you can tell it to use a different config file if you prefer
 #' envstat::edit_envstat(filepath = "/tmp/config.yml")
 #' }
-edit_envstat <- function(filepath = "~/.envstat"){
-  if (!interactive()){
-    stop("The current session is not interactive.\n",
-         "You can only use this function from an interactive R session.")
+edit_envstat <- function(filepath = "~/.envstat") {
+  if (!interactive()) {
+    stop(
+      "The current session is not interactive.\n",
+      "You can only use this function from an interactive R session."
+    )
   }
 
-  if (!file.exists(filepath)){
-    stop("Can't find file: ", filepath, "\n",
-         "Please check the supplied path and try again.")
+  if (!file.exists(filepath)) {
+    stop(
+      "Can't find file: ", filepath, "\n",
+      "Please check the supplied path and try again."
+    )
   }
 
-  if (rstudioapi::isAvailable()){
+  if (rstudioapi::isAvailable()) {
     rstudioapi::navigateToFile(filepath)
   } else {
     utils::file.edit(filepath)

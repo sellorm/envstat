@@ -1,6 +1,6 @@
 test_that("check environment variable chacking works", {
   # Set an environment variable to test
-  Sys.setenv("ENVSTAT_TEST"="hatstand")
+  Sys.setenv("ENVSTAT_TEST" = "hatstand")
 
   # Load a custom config to test the env var
   config <- list(env_vars = c("ENVSTAT_TEST"))
